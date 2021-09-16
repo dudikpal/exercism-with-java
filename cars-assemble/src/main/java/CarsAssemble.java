@@ -13,14 +13,26 @@ public class CarsAssemble {
 
     private static double successRate(int speed)
     {
-        double result = switch(speed)
+        switch(speed)
         {
-            case 1, 2, 3, 4 -> 1;
-            case 5, 6, 7, 8 -> 0.9;
-            case 9 -> 0.8;
-            case 10 -> 0.77;
-            default -> 0;
-        };
-        return result;
+            case 1:
+            case 2:
+            case 3:
+            case 4: return 1;
+            case 5:
+            case 6:
+            case 7:
+            case 8: return 0.9;
+            case 9: return 0.8;
+            case 10: return 0.77;
+            default: return 0;
+        }
+
+    }
+
+
+    public static void main(String[] args) {
+        CarsAssemble c = new CarsAssemble();
+        System.out.println(c.workingItemsPerMinute(4));
     }
 }
